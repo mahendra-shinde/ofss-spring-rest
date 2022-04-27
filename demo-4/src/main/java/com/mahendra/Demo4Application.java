@@ -13,6 +13,8 @@ import org.springframework.http.RequestEntity;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
+import com.mahendra.models.Customer;
+
 @SpringBootApplication
 public class Demo4Application implements CommandLineRunner {
 
@@ -31,9 +33,15 @@ public class Demo4Application implements CommandLineRunner {
 		HttpHeaders headers = new HttpHeaders();
 		headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
 		HttpEntity<String> entity = new HttpEntity<>("body",headers);
-		ResponseEntity<String> output = template.exchange(BASE_URL,HttpMethod.GET, entity, String.class);
+		//ResponseEntity<String> output = template.exchange(BASE_URL,HttpMethod.GET, entity, String.class);
+		ResponseEntity<Customer[]> output = template.exchange(BASE_URL,HttpMethod.GET, entity, Customer[].class);
 		System.out.println("Response Status Code : "+ output.getStatusCodeValue());
-		System.out.println("Response Text : "+ output.getBody());
+		//System.out.println("Response Text : "+ output.getBody());
+		System.out.println("Found number of customers : "+ output.getBody().length);
+		for(Customer c: output.getBody()) {
+			System.out.println("First Name: "+c.getFirstName());
+			System.out.println("Last Name: "+c.getLastName());
+		}
 		
 	}
 
