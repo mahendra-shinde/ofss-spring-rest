@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!-- This document is NOT plain HTML but a template ! -->
+<html xmlns:th="https://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Customer details</title>
+</head>
+<body>
+
+<!--  SpringEL : Spring Expression Language
+		Simplified Definition EL : Language used for Extracting DATA !
+			
+ -->
+<h3 th:text="${msg}"></h3>
+
+
+<table th:if="${cust != null}">
+	<tr>
+		<td>Customer ID</td>
+		<td><span th:text="${cust.custId}"></span> </td>
+	</tr>
+	<tr>
+		<td>Customer Name:</td>	
+		<td><span th:text="${cust.firstName}"></span> 
+			<span th:text="${cust.lastName}"></span></td>
+	</tr>
+	<tr>
+		<td>PAN</td>
+		<td><span th:text="${cust.pan}"></span></td>
+	</tr>
+</table>
+</body>
+</html>
