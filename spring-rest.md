@@ -35,3 +35,8 @@ When client request data in XML or JSON, Server will check for "XML" response ty
 
 Content Negotiation : Client & Server will decide "What" to return based on "Client's" request and server response parameters.
 
+---
+## Content Negotiation : Request Headers
+
+Accept:			List all the supported "response types" 
+Content-Type:	Data-format used by "Request Body"
