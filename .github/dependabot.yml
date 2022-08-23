@@ -6,6 +6,10 @@
 version: 2
 updates:
   - package-ecosystem: "gradle" # See documentation for possible values
-    directory: "/" # Location of package manifests
+    directory: "demo-1" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "gradle" # See documentation for possible values
+    directory: "demo-2" # Location of package manifests
     schedule:
       interval: "weekly"
