@@ -14,7 +14,7 @@ updates:
     schedule:
       interval: "weekly"
   - package-ecosystem: "gradle" # See documentation for possible values
-      directory: "demo-3" # Location of package manifests
-      open-pull-requests-limit: 0
-      schedule:
-        interval: "weekly"
+    directory: "demo-3" # Location of package manifests
+    open-pull-requests-limit: 0
+    schedule:
+      interval: "weekly"
